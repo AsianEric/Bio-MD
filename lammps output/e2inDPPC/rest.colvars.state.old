@@ -1,0 +1,42 @@
+configuration {
+  step       499900
+  dt 2.000000e+00
+  version 2022-05-24
+}
+
+colvar {
+  name bb_rmsd
+  x  2.05617604830457e+00
+}
+
+colvar {
+  name dppc_head_upper
+  x  2.16070673590505e+01
+}
+
+colvar {
+  name dppc_head_lower
+  x -2.13756455019364e+01
+}
+
+restraint {
+  configuration {
+    step 499900
+    name harmonic1
+  }
+}
+
+restraint {
+  configuration {
+    step 499900
+    name harmonic2
+  }
+}
+
+restraint {
+  configuration {
+    step 499900
+    name harmonic3
+  }
+}
+

@@ -1,0 +1,60 @@
+###Lipid Head### 
+
+Colvarstrajfrequency    100
+Colvarsrestartfrequency 100
+
+indexFile               colvar.index
+
+colvar {
+   name bb_rmsd
+   rmsd {
+       atoms {
+          indexGroup         bb_rmsd
+       }
+       refPositionsFile      restraints/posres.xyz
+   }
+}
+
+harmonic {
+   colvars bb_rmsd
+   centers 0
+   forceConstant 0.1
+}
+
+colvar {
+   name dppc_head_upper
+   distanceZ {
+      ref {
+         dummyAtom ( 0.000, 0.000, 0.000 )
+      }
+      main {
+         indexGroup     dppc_head_upper
+      }
+   }
+}
+
+harmonic {
+   colvars dppc_head_upper
+   centers 19
+   forceConstant 0
+}
+
+colvar {
+   name dppc_head_lower
+   distanceZ {
+      ref {
+         dummyAtom ( 0.000, 0.000, 0.000 )
+      }
+      main {
+         indexGroup     dppc_head_lower
+      }
+   }
+}
+
+harmonic {
+   colvars dppc_head_lower
+   centers -19
+   forceConstant 0
+}
+
+
